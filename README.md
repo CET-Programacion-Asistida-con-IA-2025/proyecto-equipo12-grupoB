@@ -65,6 +65,8 @@ Creamos una **plataforma web integral** que funciona como:
 
 ## 🎨 Diseño
 
+![Mood Board - CET 12b](https://github.com/user-attachments/assets/b35a5d71-81c6-4878-bfc0-c1a880bab70a)
+
 El diseño está inspirado en un mood board que refleja:
 - **Empoderamiento femenino** a través de colores cálidos (rosa, morado, naranja)
 - **Accesibilidad** con interfaces simples y claras
@@ -112,7 +114,7 @@ renacer/
 
 > *"El empoderamiento de las mujeres es clave para el desarrollo sostenible de toda la sociedad"*
 
-//////////////////////////
+---
 
 _Curso de Programación Asistida con IA - Chicas en Tecnología_ 🚀
 
