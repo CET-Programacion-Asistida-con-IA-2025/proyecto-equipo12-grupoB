@@ -105,15 +105,7 @@ renacer/
 3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
 4. Push a la Branch (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
-
-## 📞 Contacto
-
-Si tienes preguntas, sugerencias o quieres colaborar con el proyecto, no dudes en contactarnos.
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE.md](LICENSE.md) para más detalles.
-
+   
 ---
 
 ### 💪 Juntas podemos construir un futuro más igualitario
