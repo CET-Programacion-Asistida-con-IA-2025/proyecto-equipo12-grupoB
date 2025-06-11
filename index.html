@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mujeres Empoderadas Tech - Tu Independencia Comienza Aquí</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #693C91; /* Lavanda */
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: #ff5c8d;
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff5c8d;
+    
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff; /* Morado profundo */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: color 0.3s;
+    
+}
+
+.nav-links a:hover {
+    color: #693C91; /* Morado profundo */
+}
+
+.mobile-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+main {
+    margin-top: 80px;
+}
+
+/* Hero Section */
+.hero {
+    background: #693C91; /* Morado profundo */
+    color: white;
+    padding: 150px 0 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="white" opacity="0.1"/><circle cx="80" cy="40" r="1" fill="white" opacity="0.1"/><circle cx="40" cy="80" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #ffd84a; /* Mostaza suave */
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease 0.4s both;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    background: #D3785A; /* Terracota */
+}
+
+.typing-subtitle {
+    visibility: hidden; /* Oculto al inicio */
+}
+
+.section {
+    padding: 4rem 0;
+    background: rgb(255, 236, 63);
+    margin: 2rem 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.section:nth-child(even) {
+    background: #ff5cad; /* Lavanda */
+    color: white;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #693C91; /* Morado profundo */
+}
+
+.section:nth-child(even) h2 {
+    color: white;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    border-color: #D35A76; /* Rosa empoderador */
+}
+
+.card h3 {
+    color: #693C91; /* Morado profundo */
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.card ul {
+    margin-left: 1rem;
+    color: #666;
+}
+
+.testimonial {
+    background: #ffd84b;/* Rosa empoderador */
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 1rem 0;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    color: white;
+}
+
+.testimonial blockquote {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.testimonial cite {
+    font-weight: bold;
+    color: #ff62d8; /* Mostaza suave */
+}
+
+.faq-item {
+    background: white;
+    margin: 1rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.faq-question {
+    background: #693C91; /* Morado profundo */
+    color: white;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    padding: 0 2rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-answer.active {
+    padding: 2rem;
+    max-height: 200px;
+}
+
+.chatbot-section {
+    background: #693C91; /* Terracota */
+    color: white;
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.chatbot-button {
+    background: #D35A76; /* Rosa empoderador */
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s;
+}
+
+.chatbot-button:hover {
+    background: #D3B85A; /* Mostaza suave */
+    transform: scale(1.05);
+}
+
+footer {
+    background: #ff5c8d;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #A78EC1; /* Lavanda */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">🚀 Mujeres Empoderadas Tech</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#capacitaciones">Capacitaciones</a></li>
+                <li><a href="#cv-entrevistas">CV & Entrevistas</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#ayuda">Ayuda</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Tu Independencia Económica<br> Comienza Aquí</h1>
+      <p class="typing-subtitle">
+        Porque impedirte trabajar es una forma de violencia. Es tu derecho crecer profesionalmente y ser económicamente independiente.
+      </p>
+      <a href="#contacto" class="cta-button">Comenzar Mi Transformación</a>
+    </div>
+  </div>
+</section>
+
+        <section class="section" id="capacitaciones">
+            <div class="container">
+                <h2>Capacitaciones Digitales</h2>
+                <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem; color: #666;">
+                    Aprende habilidades tecnológicas paso a paso, con explicaciones sencillas y prácticas
+                </p>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>🎨 Diseño con Canva</h3>
+                        <p>Crea contenido visual profesional para redes sociales, presentaciones y más.</p>
+                        <ul>
+                            <li>Tutorial básico de 20 minutos</li>
+                            <li>Plantillas gratuitas recomendadas</li>
+                            <li>Tips para crear posts atractivos</li>
+                        </ul>
+                        <button class="cta-button" style="margin-top: 1rem;" onclick="showTutorial('canva')">Ver Tutorial</button>
+                    </div>
+
+                    <div class="card">
+                        <h3>💻 Creación de Páginas Web</h3>
+                        <p>Construye tu presencia online con herramientas simples y gratuitas.</p>
+                        <ul>
+                            <li>WordPress.com para principiantes</li>
+                            <li>Wix y Squarespace paso a paso</li>
+                            <li>Cómo elegir dominio y hosting</li>
+                        </ul>
+                        <button class="cta-button" style="margin-top: 1rem;" onclick="showTutorial('web')">Empezar Ahora</button>
+                    </div>
+
+                    <div class="card">
+                        <h3>📱 Redes Sociales Profesionales</h3>
+                        <p>Optimiza tu LinkedIn y usa las redes para encontrar oportunidades laborales.</p>
+                        <ul>
+                            <li>Perfil de LinkedIn que destaque</li>
+                            <li>Estrategias de networking online</li>
+                            <li>Cómo buscar trabajo en redes</li>
+                        </ul>
+                        <button class="cta-button" style="margin-top: 1rem;" onclick="showTutorial('social')">Optimizar Perfil</button>
+                    </div>
+
+                    <div class="card">
+                        <h3>📊 Herramientas de Oficina</h3>
+                        <p>Domina Excel, Google Sheets y herramientas de productividad esenciales.</p>
+                        <ul>
+                            <li>Excel básico para principiantes</li>
+                            <li>Google Workspace completo</li>
+                            <li>Zoom y herramientas de videollamadas</li>
+                        </ul>
+                        <button class="cta-button" style="margin-top: 1rem;" onclick="showTutorial('office')">Aprender Ahora</button>
+                    </div>
+                </div>
+
+                <div class="chatbot-section">
+                    <h3>🤖 Cuentas Confiables para Aprender</h3>
+                    <p>Te recomendamos seguir estos creadores de contenido educativo:</p>
+                    <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+                        <li><strong>@Platzi:</strong> Cursos de tecnología en español</li>
+                        <li><strong>@EDteam:</strong> Programación y diseño desde cero</li>
+                        <li><strong>@LauraRodriguezT:</strong> Tips de productividad y herramientas</li>
+                        <li><strong>@SoyDalto:</strong> Programación explicada simple</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="cv-entrevistas">
+            <div class="container">
+                <h2>CV y Entrevistas de Trabajo</h2>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>📄 Cómo Armar tu CV</h3>
+                        <p><strong>Tips prácticos para destacar:</strong></p>
+                        <ul>
+                            <li><strong>Datos personales:</strong> Nombre, teléfono, email profesional</li>
+                            <li><strong>Objetivo profesional:</strong> 2-3 líneas sobre lo que buscas</li>
+                            <li><strong>Experiencia:</strong> Aunque sea poca, menciona TODO (trabajos informales, voluntariados)</li>
+                            <li><strong>Habilidades:</strong> Incluye las digitales que has aprendido</li>
+                            <li><strong>Formato:</strong> Máximo 2 páginas, letra legible, sin foto</li>
+                        </ul>
+                        <button class="cta-button" style="margin-top: 1rem;" onclick="downloadCVTemplate()">Descargar Plantilla</button>
+                    </div>
+
+                    <div class="card">
+                        <h3>🗣️ Preparación para Entrevistas</h3>
+                        <p><strong>Consejos para brillar en tu entrevista:</strong></p>
+                        <ul>
+                            <li><strong>Investiga la empresa:</strong> Visita su web y redes sociales</li>
+                            <li><strong>Practica respuestas comunes:</strong> "Háblame de ti", "¿Por qué quieres trabajar aquí?"</li>
+                            <li><strong>Prepara preguntas:</strong> Muestra interés preguntando sobre el puesto</li>
+                            <li><strong>Vestimenta:</strong> Ropa cómoda pero profesional</li>
+                            <li><strong>Puntualidad:</strong> Llega 10 minutos antes</li>
+                        </ul>
+                        <button class="cta-button" style="margin-top: 1rem;" onclick="showInterviewTips()">Ver Más Tips</button>
+                    </div>
+
+                    <div class="card">
+                        <h3>💪 Valorando tu Experiencia</h3>
+                        <p><strong>Tu experiencia de vida ES valiosa:</strong></p>
+                        <ul>
+                            <li><strong>Maternidad:</strong> Gestión de tiempo, multitasking, paciencia</li>
+                            <li><strong>Hogar:</strong> Organización, planificación, presupuesto</li>
+                            <li><strong>Estudios:</strong> Aunque no estén terminados, menciónalos</li>
+                            <li><strong>Trabajos informales:</strong> Ventas, cuidados, limpieza - todo cuenta</li>
+                            <li><strong>Voluntariados:</strong> Actividades en la comunidad, iglesia, escuela</li>
+                        </ul>
+                        <button class="cta-button" style="margin-top: 1rem;" onclick="showExperienceGuide()">Valorar Mi Experiencia</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="testimonios">
+            <div class="container">
+                <h2>Historias que Inspiran</h2>
+                
+                <div class="testimonial">
+                    <blockquote>
+                        "A los 42 años, después de 15 años fuera del mercado laboral, aprendí a usar Canva y Excel. Hoy trabajo como asistente virtual y genero mis propios ingresos. Mi esposo ya no puede controlar mis finanzas."
+                    </blockquote>
+                    <cite>- María, 44 años, Buenos Aires</cite>
+                </div>
+
+                <div class="testimonial">
+                    <blockquote>
+                        "Creé mi página web para vender mis tortas caseras. En 6 meses pasé de vender solo a vecinos a tener clientes en toda la ciudad. La tecnología cambió mi vida."
+                    </blockquote>
+                    <cite>- Carmen, 38 años, Córdoba</cite>
+                </div>
+
+                <div class="testimonial">
+                    <blockquote>
+                        "Después del divorcio a los 40, no sabía ni enviar un email. Hoy trabajo en una oficina y mis hijos están orgullosos. Nunca es tarde para empezar."
+                    </blockquote>
+                    <cite>- Laura, 43 años, Rosario</cite>
+                </div>
+
+                <div class="testimonial">
+                    <blockquote>
+                        "Aprendí LinkedIn y conseguí mi primer trabajo remoto como community manager. Ahora trabajo desde casa y cuido a mi madre al mismo tiempo."
+                    </blockquote>
+                    <cite>- Ana, 39 años, Mendoza</cite>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="faq">
+            <div class="container">
+                <h2>Preguntas Frecuentes</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Es muy tarde para empezar a los 35+ años?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>¡Nunca es tarde! Muchas empresas valoran la experiencia de vida, responsabilidad y compromiso que aportan las mujeres mayores de 35. Tu madurez es una ventaja, no un obstáculo.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Necesito estudios universitarios?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No siempre. Muchos trabajos valoran más las habilidades prácticas y la actitud. Las capacitaciones digitales y certificaciones online pueden abrirte muchas puertas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Cómo manejo la falta de experiencia reciente?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Enfócate en tus habilidades transferibles: organización, comunicación, resolución de problemas. Destaca proyectos personales, voluntariados y toda tu experiencia de vida.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Qué hago si mi familia no me apoya?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tu independencia económica es un derecho, no un privilegio. Busca apoyo en grupos de mujeres, familiares que te entiendan o profesionales. No permitas que nadie limite tu crecimiento.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>¿Cuánto tiempo necesito para estar lista?</span>
+                        <span>+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Puedes empezar a postularte mientras aprendes. Con 2-3 meses de capacitación básica ya puedes aplicar a trabajos de nivel inicial. Lo importante es comenzar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="chatbot-section" id="ayuda">
+            <div class="container">
+                <h2>🤖 Asistente Virtual 24/7</h2>
+                <p>¿Tienes dudas específicas? Nuestro asistente de IA puede ayudarte con:</p>
+                <ul style="text-align: left; max-width: 500px; margin: 0 auto;">
+                    <li>Consejos personalizados para tu situación</li>
+                    <li>Recomendaciones de cursos según tus intereses</li>
+                    <li>Ayuda para redactar tu CV</li>
+                    <li>Preparación para entrevistas específicas</li>
+                    <li>Apoyo emocional en tu proceso de búsqueda</li>
+                </ul>
+                <button class="chatbot-button" onclick="openChatbot()">Chatear Ahora</button>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">También puedes escribirnos por WhatsApp: +54 11 1234-5678</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mujeres Empoderadas Tech. Tu independencia es nuestro objetivo.</p>
+            <div class="social-links">
+                <a href="#" onclick="openSocial('instagram')">📱 Instagram</a>
+                <a href="#" onclick="openSocial('youtube')">📺 YouTube</a>
+                <a href="#" onclick="openSocial('whatsapp')">💬 WhatsApp</a>
+                <a href="#" onclick="openSocial('email')">📧 Email</a>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">
+                Si estás en una situación de violencia, busca ayuda: Línea 144 (Argentina) - 24 horas, gratuita y confidencial
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Navegación móvil
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('span:last-child');
+            
+            answer.classList.toggle('active');
+            icon.textContent = answer.classList.contains('active') ? '-' : '+';
+        }
+
+        // Funciones de tutorials
+        function showTutorial(type) {
+            const tutorials = {
+                canva: "https://www.canva.com/learn/",
+                web: "https://wordpress.com/learn/",
+                social: "https://www.linkedin.com/help/linkedin",
+                office: "https://support.google.com/docs/"
+            };
+            
+            alert(`Redirigiendo al tutorial de ${type}. En una versión completa, esto abriría un modal con el tutorial paso a paso.`);
+            // window.open(tutorials[type], '_blank');
+        }
+
+        // Funciones de CV y entrevistas
+        function downloadCVTemplate() {
+            alert("En una versión completa, esto descargaría una plantilla de CV personalizable.");
+            // Aquí iría la lógica para descargar la plantilla
+        }
+
+        function showInterviewTips() {
+            alert("Mostrando tips adicionales para entrevistas. En la versión completa, esto abriría un modal con consejos detallados.");
+        }
+
+        function showExperienceGuide() {
+            alert("Abriendo la guía para valorar tu experiencia. En la versión completa, esto sería un cuestionario interactivo.");
+        }
+
+        // Chatbot
+        function openChatbot() {
+            alert("En la versión completa, esto abriría nuestro chatbot de IA o redirigirían a una plataforma de chat como Tidio, Intercom, o directamente a ChatGPT con prompts personalizados.");
+            // Aquí integrarías tu chatbot preferido
+        }
+
+        // Redes sociales
+        function openSocial(platform) {
+            const links = {
+                instagram: "https://instagram.com/mujeresempoderadastech",
+                youtube: "https://youtube.com/@mujeresempoderadastech",
+                whatsapp: "https://wa.me/5491112345678",
+                email: "mailto:contacto@mujeresempoderadastech.com"
+            };
+            
+            alert(`Abriendo ${platform}. En la versión completa, esto te llevaría a nuestras redes sociales reales.`);
+            // window.open(links[platform], '_blank');
+        }
+
+        // Smooth scrolling para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animaciones al hacer scroll
+        function animateOnScroll() {
+            const cards = document.querySelectorAll('.card, .testimonial');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const cardVisible = 150;
+                
+                if (cardTop < window.innerHeight - cardVisible) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Inicializar animaciones
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Cerrar menú móvil al hacer click en un enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+    </script>
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        </script>
+        <script>
+    // Dynamic loading effect for the page
+    window.addEventListener('load', function() {
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.5s ease';
+        
+        setTimeout(() => {
+            document.body.style.opacity = '1';
+        }, 100);
+    });
+
+    // Add typing effect to hero subtitle
+    function typeWriter(element, text, speed = 100) {
+        let i = 0;
+        element.innerHTML = '';
+         element.style.visibility = 'visible'; // <--- MUY IMPORTANTE
+        function type() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            }
+        }
+        type();
+    }
+
+    // Initialize typing effect when page loads
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            const subtitle = document.querySelector('.typing-subtitle');
+            if (subtitle) {
+                const originalText = subtitle.textContent;
+                typeWriter(subtitle, originalText, 50);
+            }
+        }, 1000);
+    });
+</script>
+
+</body>
+</html>
