@@ -26,12 +26,6 @@
             // window.open(tutorials[type], '_blank');
         }
 
-        // Funciones de CV y entrevistas
-        function downloadCVTemplate() {
-            alert("En una versión completa, esto descargaría una plantilla de CV personalizable.");
-            // Aquí iría la lógica para descargar la plantilla
-        }
-
         function showInterviewTips() {
             alert("Mostrando tips adicionales para entrevistas. En la versión completa, esto abriría un modal con consejos detallados.");
         }
@@ -169,3 +163,25 @@
             }
         }, 1000);
     });
+ 
+function mostrarPopup(event) {
+    event.preventDefault();
+    document.getElementById('popup').classList.add('show');
+}
+
+function cerrarPopup() {
+    document.getElementById('popup').classList.remove('show');
+}
+
+// Agregar listener para el botón cerrar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('cerrarPopup').addEventListener('click', cerrarPopup);
+});
+function downloadCVTemplate() {
+    const link = document.createElement('a');
+    link.href = 'plantillas/CV-plantilla.docx.pdf'; // plantillas
+    link.download = 'CV-plantilla.docx';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
