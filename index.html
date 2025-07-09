@@ -20,6 +20,7 @@
                 <li><a href="#testimonios">Testimonios</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#ayuda">Ayuda</a></li>
+                <li><a href="#contactanos">Contactanos</a></li>
             </ul>
             <button class="mobile-menu" onclick="toggleMenu()">☰</button>
         </nav>
@@ -262,6 +263,34 @@
                 <p style="margin-top: 1rem; font-size: 0.9rem;">También puedes escribirnos por WhatsApp: +54 11 1234-5678</p>
             </div>
         </section>
+        <section class="form-section" id="contactanos">
+  <div class="container">
+    <h2>📬 Contáctanos</h2>
+    <p>Déjanos tus datos y nos pondremos en contacto contigo lo antes posible.</p>
+    <form action="https://formspree.io/f/mnnvkkgk" method="POST" id="contactForm" class="contact-form">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required>
+
+      <label for="fecha">Fecha de nacimiento:</label>
+      <input type="date" id="fecha" name="fecha" required>
+
+      <label for="telefono">Número de teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="+54 11 1234-5678" required>
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" placeholder="nombre@email.com" required>
+
+      <label for="comentarios">Comentarios:</label>
+      <textarea id="comentarios" name="comentarios" rows="4" placeholder="Escribe tu mensaje..."></textarea>
+
+      <button type="submit" class="cta-button">Enviar</button>
+    </form>
+    <p id="formMessage" class="form-message"></p>
+  </div>
+</section>
     </main>
 
     <footer>

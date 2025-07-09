@@ -185,3 +185,37 @@ function downloadCVTemplate() {
     link.click();
     document.body.removeChild(link);
 }
+// Validar formulario
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita el envío automático
+    const form = event.target;
+    const message = document.getElementById('formMessage');
+
+    // Validación básica
+    if (!form.nombre.value || !form.apellido.value || !form.fecha.value || !form.telefono.value || !form.email.value) {
+        message.textContent = "❌ Por favor completa todos los campos obligatorios.";
+        message.style.color = "#d35a76";
+        return;
+    }
+
+    // Enviar datos a Formspree
+    fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+        if (response.ok) {
+            message.textContent = "✅ ¡Gracias! Proximamente nos comunicaremos contigo.";
+            message.style.color = "#6C4D91";
+            form.reset();
+        } else {
+            message.textContent = "❌ Hubo un error al enviar. Inténtalo de nuevo.";
+            message.style.color = "#d35a76";
+        }
+    })
+    .catch(() => {
+        message.textContent = "❌ No se pudo enviar. Revisa tu conexión.";
+        message.style.color = "#d35a76";
+    });
+});
