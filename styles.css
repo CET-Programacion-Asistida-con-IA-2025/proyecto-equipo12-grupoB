@@ -614,3 +614,16 @@ footer {
   font-weight: 500;
   color: #6C4D91;
 }
+.video-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: center;
+  background-color: rgb(255, 255, 255); 
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(108, 77, 145, 0.3);
+}
+.video-section {
+  background-color: #fdbbc4; /* fondo blanco */
+  padding: 2rem; /* para que no quede pegado */
+}
