@@ -419,13 +419,13 @@ footer {
     color: #e9ecef;
     text-decoration: none;
     font-size: 1.1rem;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease-in-out;
     padding: 0.5rem;
     border-radius: 8px;
 }
 
 .social-links a:hover {
-    color: #d35a76;
+    color: #ff93ac; /* cambio a otro color más claro */
     background: rgba(211, 90, 118, 0.1);
 }
 
@@ -516,7 +516,7 @@ footer {
 
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease-in-out;
   z-index: 1000;
 }
 
@@ -534,7 +534,7 @@ footer {
   text-align: center;
   box-shadow: 0 12px 40px rgba(108, 77, 145, 0.3);
   transform: scale(0.8);
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease-in-out;
 }
 
 .btn-cerrar {
@@ -547,7 +547,7 @@ footer {
   cursor: pointer;
   font-weight: 600;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease-in-out; /* Efecto de comienzo y final de transición */ 
 }
 
 .btn-cerrar:hover {
@@ -585,7 +585,7 @@ footer {
   border-radius: 8px;
   margin-bottom: 1.2rem;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease-in-out;
 }
 
 .contact-form input:focus,
@@ -602,7 +602,7 @@ footer {
   padding: 0.9rem 2rem;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease-in-out;
 }
 
 .contact-form .cta-button:hover {
